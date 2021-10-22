@@ -41,11 +41,11 @@ export default {
   },
   // Este es el hook que utilizamos para cargar las películas al momento de ingresar al sitio web
   // Al parecer no es el correcto y la información no carga
-  beforeUpdate() {
+  created() {
     axios
       .get("http://www.omdbapi.com/?s=harry+potter&type=movie&apikey=23daade9")
       .then((response) => {
-        this.movies = response.data.Search.slice(0, 4);
+        this.movies = response.data.Search.slice(6, 10);
         console.log(this.movies);
       });
   },
